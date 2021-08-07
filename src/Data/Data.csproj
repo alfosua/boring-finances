@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <AssemblyName>BoringSoftware.Finances.Data</AssemblyName>
+    <RootNamespace>BoringSoftware.Finances.Data</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Data.Abstractions\Data.Abstractions.csproj" />
+  </ItemGroup>
+
+</Project>

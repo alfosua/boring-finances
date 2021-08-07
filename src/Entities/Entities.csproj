@@ -1,0 +1,9 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <AssemblyName>BoringSoftware.Finances.Entities</AssemblyName>
+    <RootNamespace>BoringSoftware.Finances.Entities</RootNamespace>
+  </PropertyGroup>
+
+</Project>

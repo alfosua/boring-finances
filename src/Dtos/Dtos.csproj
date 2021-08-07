@@ -1,0 +1,9 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <AssemblyName>BoringSoftware.Finances.Dtos</AssemblyName>
+    <RootNamespace>BoringSoftware.Finances.Dtos</RootNamespace>
+  </PropertyGroup>
+
+</Project>
