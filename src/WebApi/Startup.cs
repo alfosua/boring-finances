@@ -1,15 +1,10 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using BoringSoftware.Finances.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 
 namespace BoringSoftware.Finances.WebApi
@@ -26,6 +21,9 @@ namespace BoringSoftware.Finances.WebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            string dbContextConnectionString = Configuration.GetConnectionString(nameof(BoringFinancesDbContext));
+
+            services.AddDbContext<BoringFinancesDbContext>(options => options.UseNpgsql(dbContextConnectionString));
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
