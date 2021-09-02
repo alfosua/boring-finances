@@ -4,6 +4,10 @@ import resolve from '@rollup/plugin-node-resolve';
 import livereload from 'rollup-plugin-livereload';
 import { terser } from 'rollup-plugin-terser';
 import css from 'rollup-plugin-css-only';
+import sveltePreprocess from 'svelte-preprocess';
+import typescript from '@rollup/plugin-typescript';
+import alias from '@rollup/plugin-alias';
+import path from 'path';
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -29,7 +33,7 @@ function serve() {
 }
 
 export default {
-	input: 'src/main.js',
+	input: 'src/main.ts',
 	output: {
 		sourcemap: true,
 		format: 'iife',
@@ -37,7 +41,22 @@ export default {
 		file: 'public/build/bundle.js'
 	},
 	plugins: [
+		alias({
+			resolve: ['.svelte', '.ts', '.js', '.scss', ''],
+			entries: [{ find: '@', replacement: path.resolve(__dirname, 'src') }],
+		}),
+
 		svelte({
+			preprocess: sveltePreprocess({
+				sourceMap: !production,
+				scss: {
+					includePaths: ['src/styles'],
+					
+				},
+				postcss: {
+					plugins: [require('autoprefixer')()],
+				}
+			}),
 			compilerOptions: {
 				// enable run-time checks when not in production
 				dev: !production
@@ -57,6 +76,11 @@ export default {
 			dedupe: ['svelte']
 		}),
 		commonjs(),
+
+		typescript({
+			sourceMap: !production,
+			inlineSources: !production,
+		}),
 
 		// In dev mode, call `npm run start` once
 		// the bundle has been generated
