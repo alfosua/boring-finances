@@ -6,4 +6,8 @@
     <RootNamespace>BoringSoftware.Finances.Dtos</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Utils\" />
+  </ItemGroup>
+
 </Project>

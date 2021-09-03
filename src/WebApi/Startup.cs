@@ -1,3 +1,6 @@
+using BoringSoftware.Finances.Core.Accounts;
+using BoringSoftware.Finances.Core.FinancialUnits;
+using BoringSoftware.Finances.Core.Operations;
 using BoringSoftware.Finances.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -23,9 +26,31 @@ namespace BoringSoftware.Finances.WebApi
         {
             string dbContextConnectionString = Configuration.GetConnectionString(nameof(BoringFinancesDbContext));
 
+            services.AddCors(options => options.AddDefaultPolicy(policy => policy
+                .AllowAnyOrigin()
+                .AllowAnyHeader()
+                .AllowAnyMethod()));
+
             services.AddDbContext<BoringFinancesDbContext>(options => options.UseNpgsql(dbContextConnectionString));
 
             services.AddControllers();
+
+            services.AddMemoryCache();
+
+            services.AddTransient<IAccountCruder, AccountCruder>();
+            services.AddTransient<IAccountMapper, AccountMapper>();
+            services.AddTransient<IAccountResolver, AccountResolver>();
+            services.AddTransient<IAccountTypeResolver, AccountTypeResolver>();
+            
+            services.AddTransient<IFinancialUnitCruder, FinancialUnitCruder>();
+            services.AddTransient<IFinancialUnitMapper, FinancialUnitMapper>();
+            services.AddTransient<IFinancialUnitResolver, FinancialUnitResolver>();
+            services.AddTransient<IFinancialUnitTypeResolver, FinancialUnitTypeResolver>();
+
+            services.AddTransient<IOperationCruder, OperationCruder>();
+            services.AddTransient<IOperationEntryTypeResolver, OperationEntryTypeResolver>();
+            services.AddTransient<IOperationMapper, OperationMapper>();
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "BoringSoftware.Finances.WebApi", Version = "v1" });
@@ -47,6 +72,8 @@ namespace BoringSoftware.Finances.WebApi
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseCors();
 
             app.UseEndpoints(endpoints =>
             {
