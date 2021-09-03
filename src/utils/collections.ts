@@ -1,0 +1,1 @@
+export const zip = (first: any[], ...rest: any[][]) => first.map((a, i) => [a, rest.map(x => x[i]) ]);
