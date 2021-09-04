@@ -1,9 +1,10 @@
 {
   "extends": "@tsconfig/svelte/tsconfig.json",
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "bfapi.config.json"],
   "exclude": ["node_modules/*", "__sapper__/*", "public/*"],
   "compilerOptions": {
     "baseUrl": "./src",
+    "resolveJsonModule": true,
     "paths": {
       "@/*": ["*"]
     }

@@ -7,9 +7,9 @@
         {
             "type": "pwa-chrome",
             "request": "launch",
-            "name": "Launch Chrome against dev server",
+            "name": "Launch Chrome agaisnt frontent in dev environment",
             "url": "http://localhost:5000",
-            "webRoot": "${workspaceFolder}/src",
+            "webRoot": "${workspaceFolder}/src"
         }
     ]
 }

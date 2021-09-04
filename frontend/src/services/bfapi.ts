@@ -1,4 +1,4 @@
-import { BORING_FINANCES_WEBAPI_URL } from '@/utils/constants';
+import config from '@/../bfapi.app.config.json'
 
 type Config = {
   baseUrl: string;
@@ -135,10 +135,6 @@ class OperationEntryAPI {
   }
 }
 
-const defaultConfig = {
-  baseUrl: BORING_FINANCES_WEBAPI_URL,
-};
-
-const singleton = new BoringFinancesAPI(defaultConfig);
+const singleton = new BoringFinancesAPI(config);
 
 export default singleton;
