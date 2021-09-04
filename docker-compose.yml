@@ -1,0 +1,19 @@
+version: "3.9"
+
+services:
+  webapi:
+    build: backend
+    ports:
+      - "5945:80"
+      - "5946:443"
+    environment:
+      ConnectionStrings:BoringFinancesDbContext:
+        "Host=database;Database=boring_finances_prod;Username=app;Password=mysecretpassword"
+  database:
+    image: postgres:13.3
+    environment:
+      POSTGRES_PASSWORD: mysecretpassword
+      POSTGRES_USER: app
+      POSTGRES_DB: boring_finances_prod
+    ports:
+      - "5432:5432"
