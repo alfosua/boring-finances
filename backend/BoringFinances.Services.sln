@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B1845046-1E91-4529-9044-8DCF5729F4D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoringFinances.Operations.WebApi", "src\Operations.WebApi\BoringFinances.Operations.WebApi.csproj", "{9CCAD430-98FC-43D6-9007-B504683B56C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoringFinances.Operations.Data", "src\Operations.Data\BoringFinances.Operations.Data.csproj", "{8B80374E-6479-4407-A622-BCD027124D62}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9CCAD430-98FC-43D6-9007-B504683B56C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CCAD430-98FC-43D6-9007-B504683B56C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CCAD430-98FC-43D6-9007-B504683B56C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CCAD430-98FC-43D6-9007-B504683B56C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B80374E-6479-4407-A622-BCD027124D62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B80374E-6479-4407-A622-BCD027124D62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B80374E-6479-4407-A622-BCD027124D62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B80374E-6479-4407-A622-BCD027124D62}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9CCAD430-98FC-43D6-9007-B504683B56C3} = {B1845046-1E91-4529-9044-8DCF5729F4D6}
+		{8B80374E-6479-4407-A622-BCD027124D62} = {B1845046-1E91-4529-9044-8DCF5729F4D6}
+	EndGlobalSection
+EndGlobal
