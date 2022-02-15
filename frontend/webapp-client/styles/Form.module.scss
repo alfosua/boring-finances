@@ -1,0 +1,392 @@
+@use 'colors';
+
+$main-bg-color: white;
+$main-text-color: colors.$limed-spruce;
+$submit-button-text-color: white;
+$submit-button-bg-color: colors.$dodger-blue;
+$input-text-color: colors.$catskill-white;
+$input-bg-color: colors.$catskill-white;
+$input-border-color: colors.$rolling-stone;
+$input-focused-border-color: colors.$dodger-blue;
+$notes-count-bg-color: colors.$web-orange;
+$tag-bg-color: colors.$web-orange;
+$tag-selected-outline-color: colors.$dodger-blue;
+$toolbar-button-color: colors.$limed-spruce;
+
+:export {
+  toolbarButtonColor: $toolbar-button-color;
+}
+
+.form {
+  padding: 35px;
+  width: 685px;
+  background-color: $main-bg-color;
+  border-radius: 30px;
+}
+
+.form > header {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 35px;
+}
+
+.form > footer {
+  margin-top: 10px;
+  display: flex;
+  justify-content: end;
+}
+
+.form > header h2 {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 28px;
+  letter-spacing: 0.1em;
+  color: $main-text-color;
+}
+
+.form > header hr {
+  color: $main-text-color;
+  background-color: $main-text-color;
+  height: 3px;
+  border: none;
+  width: 100%;
+  margin: 0;
+}
+
+.form > .container {
+  display: flex;
+  flex-direction: row;
+  gap: 35px;
+}
+
+.form .button.submit {
+  padding: 13.5px 28px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 11px;
+  line-height: 13px;
+  letter-spacing: 0.1em;
+  color: $submit-button-text-color;
+  background-color: $submit-button-bg-color;
+  border: none;
+  border-radius: 15px;
+}
+
+.propertySection {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.propertySection > header {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.propertySection > header h3 {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 21px;
+  letter-spacing: 0.1em;
+  color: $main-text-color;
+}
+
+.propertySection > header p {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 11px;
+  line-height: 13px;
+  letter-spacing: 0.1em;
+  color: $main-text-color;
+  max-width: 290px;
+}
+
+.propertySection > .container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.propertySection > .container {
+  display: flex;
+  flex-direction: column;
+  max-width: 290px;
+  gap: 10px;
+}
+
+.property {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.property > .container.main {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.property > .container.additional {
+  margin-left: 90px;
+}
+
+.property .main label {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 18px;
+  text-align: right;
+  letter-spacing: 0.1em;
+  color: $main-text-color;
+  min-width: 80px;
+}
+
+.property .container.additional p {
+  margin: 0;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: $main-text-color;
+}
+
+.property .input.simple {
+  width: 200px;
+  height: 30px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  text-indent: 10px;
+  color: $input-text-color;
+  background-color: $input-bg-color;
+  border-bottom-width: 2px;
+  border-bottom-color: $input-border-color;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  border-left-width: 0;
+  border-right-width: 0;
+  border-top-width: 0;
+}
+
+.property .input.simple:focus {
+  border-color: $input-focused-border-color;
+  outline: none;
+  border-width: 0;
+  border-bottom-width: 2px;
+}
+
+.property.picture {
+  padding-left: 90px;
+}
+
+.property.picture > .container.main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+.property.picture > .container.additional {
+  margin-left: 0;
+}
+
+.property.picture .container.additional p {
+  width: 100%;
+  text-align: center;
+}
+
+.property.picture .frame {
+  overflow: hidden;
+  max-width: 64px;
+  max-height: 64px;
+  border-radius: 32px;
+
+  margin: 10px;
+  box-shadow: 0px 0px 0px 10px white, 2px 2px 10px 10px rgba(0, 0, 0, 0.15);
+}
+
+.property.picture .image {
+  max-width: 64px;
+  max-height: 64px;
+}
+
+.property.notes .toolbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: end;
+  width: 200px;
+  gap: 10px;
+}
+
+.property.notes .toolbar .container.buttons {
+  display: flex;
+  flex-direction: row;
+}
+
+.property.notes .toolbar button {
+  padding: 8px;
+  background-color: transparent;
+  border: none;
+  border-radius: 10px;
+}
+
+.property.notes .toolbar button svg {
+  display: block;
+}
+
+.property.notes .toolbar .count {
+  position: relative;
+}
+
+.property.notes .toolbar .count .background {
+  width: 30px;
+  height: 30px;
+  background-color: $notes-count-bg-color;
+  border-radius: 15px;
+}
+
+.property.notes .toolbar .count .text {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  text-align: center;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 12px;
+  line-height: 14px;
+  color: white;
+}
+
+.property.tags .editor {
+  display: flex;
+  flex-direction: column;
+  margin-left: 90px;
+  gap: 10px;
+}
+
+.property.tags .editor .toolbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.property.tags .editor .toolbar p {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 11px;
+  line-height: 13px;
+  letter-spacing: 0.1em;
+  color: $main-text-color;
+}
+
+.property.tags .editor .toolbar button {
+  padding: 8px;
+  background-color: transparent;
+  border: none;
+  border-radius: 10px;
+}
+
+.property.tags .editor .container.values {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.property.tags .editor .container.values .value {
+  position: relative;
+
+  background-color: $tag-bg-color;
+  max-height: 23px;
+  padding: 5px 0;
+  padding-left: 20px;
+  padding-right: 10px;
+  border-radius: 10px;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 13px;
+  letter-spacing: 0.1em;
+  color: white;
+}
+
+.property.tags .editor .container.values .value p {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: clip;
+  max-width: 170px;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 13px;
+  letter-spacing: 0.1em;
+  color: white;
+}
+
+.property.tags .editor .container.values .value .hole {
+  position: absolute;
+  transform: translateY(-50%);
+  left: 6px;
+  top: 50%;
+
+  background-color: white;
+
+  border-radius: 4px;
+  width: 8px;
+  height: 8px;
+}
+
+.property.tags
+  .editor
+  .container.values
+  .value[data-tag-selected='true']
+  .hole {
+  border: $tag-selected-outline-color solid 2px;
+}
+
+.property.tags .editor .container.values .value[data-tag-selected='true'] {
+  outline: $tag-selected-outline-color solid 2px;
+}
+
+.property.tags .editor .container.values .value .rightClipGradient {
+  position: absolute;
+  background: none;
+}
+
+.property.tags
+  .editor
+  .container.values
+  .value[data-tag-clipped='true']
+  .rightClipGradient {
+  background: linear-gradient(
+    270deg,
+    $tag-bg-color 0%,
+    rgba(255, 168, 0, 0) 100%
+  );
+  top: 0;
+  right: 10px;
+  width: 60px;
+  height: 100%;
+}
