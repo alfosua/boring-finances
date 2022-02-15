@@ -10,6 +10,13 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 var operationDbContextConnectionString = builder.Configuration.GetConnectionString(nameof(OperationDbContext));
+var allowedOrigins = builder.Configuration.GetValue<string>("AllowedOrigins").Split(";");
+
+builder.Services.AddCors(options => options
+    .AddDefaultPolicy(x => x
+        .WithOrigins(allowedOrigins)
+        .AllowAnyHeader()
+        .AllowAnyMethod()));
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
@@ -31,6 +38,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors();
 
 app.UseAuthorization();
 
