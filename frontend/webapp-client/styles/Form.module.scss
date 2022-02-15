@@ -2,9 +2,10 @@
 
 $main-bg-color: white;
 $main-text-color: colors.$limed-spruce;
+$error-text-color: red;
 $submit-button-text-color: white;
 $submit-button-bg-color: colors.$dodger-blue;
-$input-text-color: colors.$catskill-white;
+$input-text-color: colors.$rolling-stone;
 $input-bg-color: colors.$catskill-white;
 $input-border-color: colors.$rolling-stone;
 $input-focused-border-color: colors.$dodger-blue;
@@ -34,7 +35,7 @@ $toolbar-button-color: colors.$limed-spruce;
 .form > footer {
   margin-top: 10px;
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 .form > header h2 {
@@ -136,6 +137,7 @@ $toolbar-button-color: colors.$limed-spruce;
 
 .property > .container.additional {
   margin-left: 90px;
+  min-height: 11px;
 }
 
 .property .main label {
@@ -160,6 +162,10 @@ $toolbar-button-color: colors.$limed-spruce;
   color: $main-text-color;
 }
 
+.property .container.additional p.error {
+  color: $error-text-color;
+}
+
 .property .input.simple {
   width: 200px;
   height: 30px;
@@ -181,10 +187,15 @@ $toolbar-button-color: colors.$limed-spruce;
 }
 
 .property .input.simple:focus {
+  color: $input-text-color;
   border-color: $input-focused-border-color;
   outline: none;
   border-width: 0;
   border-bottom-width: 2px;
+}
+
+.property .input[aria-invalid='true'] {
+  border-color: $error-text-color;
 }
 
 .property.picture {
@@ -226,7 +237,7 @@ $toolbar-button-color: colors.$limed-spruce;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: end;
+  justify-content: flex-end;
   width: 200px;
   gap: 10px;
 }
@@ -285,6 +296,7 @@ $toolbar-button-color: colors.$limed-spruce;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  min-height: 40px;
 }
 
 .property.tags .editor .toolbar p {
@@ -302,6 +314,10 @@ $toolbar-button-color: colors.$limed-spruce;
   background-color: transparent;
   border: none;
   border-radius: 10px;
+}
+
+.property.tags .editor .toolbar button svg {
+  display: block;
 }
 
 .property.tags .editor .container.values {
