@@ -31,7 +31,7 @@ const NewAccountForm = ({ className }: any) => {
         <AnnotationsSection />
       </section>
       <footer>
-        <button type="submit" className={`${styles.button} ${styles.submitt}`}>
+        <button type="submit" className={`${styles.button} ${styles.submit}`}>
           Create
         </button>
       </footer>
@@ -46,12 +46,12 @@ const GeneralSection = () => {
         <h3>General</h3>
         <p>Details about the account reference and domain.</p>
       </header>
-      <section className={styles.container}>
+      <div className={styles.container}>
         <PictureProperty />
         <TitleProperty />
         <CodeProperty />
         <TypeProperty />
-      </section>
+      </div>
     </section>
   );
 };
@@ -63,10 +63,10 @@ const AnnotationsSection = () => {
         <h3>Annotations</h3>
         <p>Metadata for custom querying and information.</p>
       </header>
-      <section className={styles.container}>
+      <div className={styles.container}>
         <NotesProperty />
         <TagsProperty />
-      </section>
+      </div>
     </section>
   );
 };
@@ -116,7 +116,7 @@ const TitleProperty = () => {
 
 const CodeProperty = () => {
   return (
-    <div className={styles.property}>
+    <section className={styles.property}>
       <div className={`${styles.container} ${styles.main}`}>
         <label htmlFor="code">Code</label>
         <input
@@ -129,13 +129,13 @@ const CodeProperty = () => {
       <div className={`${styles.container} ${styles.additional}`}>
         <p>Additional Message</p>
       </div>
-    </div>
+    </section>
   );
 };
 
 const TypeProperty = () => {
   return (
-    <div className={styles.property}>
+    <section className={styles.property}>
       <div className={`${styles.container} ${styles.main}`}>
         <label htmlFor="type">Type</label>
         <select
@@ -155,13 +155,13 @@ const TypeProperty = () => {
       <div className={`${styles.container} ${styles.additional}`}>
         <p>Additional Message</p>
       </div>
-    </div>
+    </section>
   );
 };
 
 const NotesProperty = () => {
   return (
-    <div className={`${styles.property} ${styles.notes}`}>
+    <section className={`${styles.property} ${styles.notes}`}>
       <div className={`${styles.container} ${styles.main}`}>
         <label>Notes</label>
         <div className={styles.toolbar}>
@@ -185,13 +185,13 @@ const NotesProperty = () => {
       <div className={`${styles.container} ${styles.additional}`}>
         <p>Additional Message</p>
       </div>
-    </div>
+    </section>
   );
 };
 
 const TagsProperty = () => {
   return (
-    <div className={`${styles.property} ${styles.tags}`}>
+    <section className={`${styles.property} ${styles.tags}`}>
       <div className={`${styles.container} ${styles.main}`}>
         <label htmlFor="tag">Tags</label>
         <input
@@ -221,7 +221,7 @@ const TagsProperty = () => {
           <TagValue>x</TagValue>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
