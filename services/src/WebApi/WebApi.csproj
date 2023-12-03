@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <RootNamespace>BoringFinances.Services.WebApi</RootNamespace>
+    <AssemblyName>BoringFinances.Services.WebApi</AssemblyName>
+    <UserSecretsId>044a6af2-db94-4575-9971-8c500686b608</UserSecretsId>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\Core\Core.csproj" />
+  </ItemGroup>
+  
+</Project>
